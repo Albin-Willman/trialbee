@@ -22,18 +22,10 @@ export function todosReducer(state = defaultValue, action) {
         case ADD_TODO: {
             return {
                 ...state,
-                items: [...state.items, createTodo(action.payload.value, state.items.length)] 
+                items: [...state.items, action.payload] 
             }
         }
         default:
             return state;
     }
 }
-
-function createTodo(value, id){
-    return {
-        id: id,
-        value: value
-    }
-}
-
