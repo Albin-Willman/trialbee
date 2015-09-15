@@ -1,5 +1,13 @@
 
-import { removeTodo as __removeTodo } from 'actions/todo-list';
+import { removeTodo as __removeTodo, addTodo as __addTodo } from 'actions/todo-list';
+
+export function addTodo(value) {
+  return (dispatch, getState) => {
+      setTimeout($=> { 
+        dispatch(__addTodo(value))
+      }, 1000);
+    };
+}
 
 export function removeTodo(id) {
     return (dispatch, getState) => {

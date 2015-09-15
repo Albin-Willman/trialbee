@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 import { TodoItem } from 'components/todo-item';
 import { TodoForm } from 'components/todo-form';
-import { removeTodo } from 'services/todo-list';
-
-import { addTodo } from 'actions/todo-list';
+import { removeTodo, addTodo } from 'services/todo-list';
 
 @connect(filterState)
 export class TodoList extends React.Component {
