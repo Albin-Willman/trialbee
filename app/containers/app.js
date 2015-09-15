@@ -27,9 +27,6 @@ const finalCreateStore = compose(
 const store = finalCreateStore(appReducer);
 
 
-
-
-
 // finally startup UI
 
 import { TodoList } from './todo-list';

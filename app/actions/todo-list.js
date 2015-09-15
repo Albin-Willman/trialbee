@@ -1,7 +1,23 @@
 
 export const REMOVE_TODO = 'removeTodo';
 export const ADD_TODO = 'addTodo';
-import uuid from 'node-uuid'
+export const START_LOADING = 'startLoading';
+export const FINISH_LOADING = 'finishLoading';
+
+
+export function finishLoading(id) {
+    return {
+        type: FINISH_LOADING,
+        payload: {}
+    };
+}
+
+export function startLoading(id) {
+    return {
+        type: START_LOADING,
+        payload: {}
+    };
+}
 
 export function removeTodo(id) {
     return {
@@ -12,11 +28,11 @@ export function removeTodo(id) {
     };
 }
 
-export function addTodo(value) {
+export function addTodo(id, value) {
     return {
         type: ADD_TODO,
         payload: {
-            id: uuid.v1(),
+            id: id,
             value: value
         }
     };

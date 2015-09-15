@@ -1,8 +1,9 @@
 
-import { REMOVE_TODO, ADD_TODO } from 'actions/todo-list';
+import { REMOVE_TODO, ADD_TODO, START_LOADING, FINISH_LOADING } from 'actions/todo-list';
 
 const defaultValue = {
-    items: []
+    items: [],
+    loading: false
 };
 
 export function todosReducer(state = defaultValue, action) {
@@ -16,6 +17,18 @@ export function todosReducer(state = defaultValue, action) {
             return {
                 ...state,
                 items: [...state.items, action.payload] 
+            }
+        }
+        case START_LOADING: {
+            return {
+                ...state,
+                loading: true
+            }
+        }
+        case FINISH_LOADING: {
+            return {
+                ...state,
+                loading: false
             }
         }
         default:

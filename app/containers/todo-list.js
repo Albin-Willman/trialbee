@@ -3,12 +3,22 @@ import { connect } from 'react-redux';
 
 import { TodoItem } from 'components/todo-item';
 import { TodoForm } from 'components/todo-form';
-import { removeTodo, addTodo } from 'services/todo-list';
+import { removeTodo, addTodo, importInitialData } from 'services/todo-list';
 
 @connect(filterState)
 export class TodoList extends React.Component {
+    componentWillMount() {
+        this.props.dispatch(importInitialData())
+    }
     render() {
         console.log(this.props);
+        if (this.props.loading) {
+            return (
+                <div className="container">
+                    i am loading
+                </div>
+                )
+        }
 
         var { dispatch } = this.props;
 
