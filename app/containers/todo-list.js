@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { TodoItem } from 'components/todo-item';
+import { TodoForm } from 'components/todo-form';
 import { removeTodo } from 'services/todo-list';
+
+import { addTodo } from 'actions/todo-list';
 
 @connect(filterState)
 export class TodoList extends React.Component {
@@ -18,7 +21,8 @@ export class TodoList extends React.Component {
         return (
             <div className="container">
                 i am a todo list
-                <ul className="list-group">{items}</ul>     
+                <ul className="list-group">{items}</ul>
+                <TodoForm action={ todo => dispatch(addTodo(todo)) } />
             </div>
         );
     }
