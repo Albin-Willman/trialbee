@@ -15,7 +15,7 @@ export class TodoForm extends React.Component {
 
     };
     state = {
-        value: 'foo'
+        value: ''
     }
     updateValue = (e) => {
         this.setState({

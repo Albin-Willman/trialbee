@@ -2,14 +2,7 @@
 import { REMOVE_TODO, ADD_TODO } from 'actions/todo-list';
 
 const defaultValue = {
-    items: [{
-        id: '32few',
-        value: 'milk'
-    },{
-        id: 'dewdew',
-        value: 'sugar'
-    }],
-    newValue: ''
+    items: []
 };
 
 export function todosReducer(state = defaultValue, action) {
